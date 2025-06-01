@@ -15,6 +15,10 @@ run/main_scene="uid://hqf103jtba7s"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/mode=1
+
 [rendering]
 
 renderer/rendering_method="mobile"

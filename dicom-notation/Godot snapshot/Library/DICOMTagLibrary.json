@@ -1,0 +1,557 @@
+{
+  "0002 0000": {
+    "name": "File Meta Information Group Length",
+    "vr": "UL"
+  },
+
+  "0002 0001": {
+    "name": "File Meta Information Version",
+    "vr": "OB"
+  },
+
+  "0002 0002": {
+    "name": "Media Storage SOP Class UID",
+    "vr": "UI"
+  },
+
+  "0002 0003": {
+    "name": "Media Storage SOP Instance UID",
+    "vr": "UI"
+  },
+
+  "0002 0010": {
+    "name": "Transfer Syntax UID",
+    "vr": "UI"
+  },
+
+  "0002 0012": {
+    "name": "Implementation Class UID",
+    "vr": "UI"
+  },
+
+  "0002 0013": {
+    "name": "Implementation Version Name",
+    "vr": "SH"
+  },
+
+  "0008 0005": {
+    "name": "Specific Character Set",
+    "vr": "CS"
+  },
+
+  "0008 0008": {
+    "name": "Image Type",
+    "vr": "CS"
+  },
+
+  "0008 0012": {
+    "name": "Instance Creation Date",
+    "vr": "DA"
+  },
+
+  "0008 0013": {
+    "name": "Instance Creation Time",
+    "vr": "TM"
+  },
+
+  "0008 0016": {
+    "name": "SOP Class UID",
+    "vr": "UI"
+  },
+
+  "0008 0018": {
+    "name": "SOP Instance UID",
+    "vr": "UI"
+  },
+
+  "0008 0020": {
+    "name": "Study Date",
+    "vr": "DA"
+  },
+
+  "0008 0021": {
+    "name": "Series Date",
+    "vr": "DA"
+  },
+
+  "0008 0022": {
+    "name": "Acquisition Date",
+    "vr": "DA"
+  },
+
+  "0008 0023": {
+    "name": "Content Date",
+    "vr": "DA"
+  },
+
+  "0008 0030": {
+    "name": "Study Time",
+    "vr": "TM"
+  },
+
+  "0008 0031": {
+    "name": "Series Time",
+    "vr": "TM"
+  },
+
+  "0008 0032": {
+    "name": "Acquisition Time",
+    "vr": "TM"
+  },
+
+  "0008 0033": {
+    "name": "Content Time",
+    "vr": "TM"
+  },
+
+  "0008 0050": {
+    "name": "Accession Number",
+    "vr": "SH"
+  },
+
+  "0008 0060": {
+    "name": "Modality",
+    "vr": "CS"
+  },
+
+  "0008 0070": {
+    "name": "Manufacturer",
+    "vr": "LO"
+  },
+
+  "0008 0090": {
+    "name": "Referring Physician's Name",
+    "vr": "PN"
+  },
+
+  "0008 0100": {
+    "name": "Code Value",
+    "vr": "SH"
+  },
+
+  "0008 0102": {
+    "name": "Coding Scheme Designator",
+    "vr": "SH"
+  },
+
+  "0008 0104": {
+    "name": "Code Meaning",
+    "vr": "LO"
+  },
+
+  "0008 1030": {
+    "name": "Study Description",
+    "vr": "LO"
+  },
+
+  "0008 103E": {
+    "name": "Series Description",
+    "vr": "LO"
+  },
+
+  "0008 1090": {
+    "name": "Manufacturer's Model Name",
+    "vr": "LO"
+  },
+
+  "0010 0010": {
+    "name": "Patient's Name",
+    "vr": "PN"
+  },
+
+  
+  "0010 0020": {
+    "name": "Patient ID",
+    "vr": "LO"
+  },
+
+  "0010 0030": {
+    "name": "Patient's Birth Date",
+    "vr": "DA"
+  },
+  
+  "0010 0040": {
+    "name": "Patient's Sex",
+    "vr": "CS"
+  },
+
+  "0010 1010": {
+    "name": "Patient's Age",
+    "vr": "AS"
+  },
+
+  "0010 1020": {
+    "name": "Patient's Size",
+    "vr": "DS"
+  },
+
+  "0010 1030": {
+    "name": "Patient's Weight",
+    "vr": "DS"
+  },
+
+  "0010 21B0": {
+    "name": "Additional Patient History",
+    "vr": "LT"
+  },
+  
+  "0012 0062": {
+    "name": "Patient Identity Removed",
+    "vr": "CS"
+  },
+
+  "0012 0063": {
+    "name": "De-identification Method",
+    "vr": "LO"
+  },
+
+  "0012 0064": {
+    "name": "De-identification Method Code Sequence",
+    "vr": "SQ"
+  },
+
+  "0018 0015": {
+    "name": "Body Part Examined",
+    "vr": "CS"
+  },
+
+  "0018 0020": {
+    "name": "Scanning Sequence",
+    "vr": "CS"
+  },
+
+  "0018 0021": {
+    "name": "Sequence Variant",
+    "vr": "CS"
+  },
+
+  "0018 0022": {
+    "name": "Scan Options",
+    "vr": "CS"
+  },
+
+  "0018 0023": {
+    "name": "MR Acquisition Type",
+    "vr": "CS"
+  },
+
+  "0018 0025": {
+    "name": "Angio Flag",
+    "vr": "CS"
+  },
+
+  "0018 0050": {
+    "name": "Slice Thickness",
+    "vr": "DS"
+  },
+
+  "0018 0080": {
+    "name": "Repetition Time",
+    "vr": "DS"
+  },
+
+  "0018 0081": {
+    "name": "Echo Time",
+    "vr": "DS"
+  },
+
+  "0018 0083": {
+    "name": "Number of Averages",
+    "vr": "DS"
+  },
+
+  "0018 0084": {
+    "name": "Imaging Frequency",
+    "vr": "DS"
+  },
+
+  "0018 0085": {
+    "name": "Imaged Nucleus",
+    "vr": "SH"
+  },
+
+  "0018 0086": {
+    "name": "Echo Number(s)",
+    "vr": "IS"
+  },
+
+  "0018 0087": {
+    "name": "Magnetic Field Strength",
+    "vr": "DS"
+  },
+
+  "0018 0088": {
+    "name": "Spacing Between Slices",
+    "vr": "DS"
+  },
+
+  "0018 0091": {
+    "name": "Echo Train Length",
+    "vr": "IS"
+  },
+
+  "0018 0093": {
+    "name": "Percent Sampling",
+    "vr": "DS"
+  },
+
+  "0018 0094": {
+    "name": "Percent Phase Field of View",
+    "vr": "DS"
+  },
+
+  "0018 0095": {
+    "name": "Pixel Bandwidth",
+    "vr": "DS"
+  },
+
+  "0018 1020": {
+    "name": "Software Version(s)",
+    "vr": "LO"
+  },
+
+  "0018 1030": {
+    "name": "Protocol Name",
+    "vr": "LO"
+  },
+
+  "0018 1050": {
+    "name": "Spatial Resolution",
+    "vr": "DS"
+  },
+
+  "0018 1088": {
+    "name": "Heart Rate",
+    "vr": "IS"
+  },
+
+  "0018 1090": {
+    "name": "Cardiac Number of Images",
+    "vr": "IS"
+  },
+
+  "0018 1094": {
+    "name": "Trigger Window",
+    "vr": "IS"
+  },
+
+  "0018 1100": {
+    "name": "Reconstruction Diameter",
+    "vr": "DS"
+  },
+
+  "0018 1250": {
+    "name": "Receive Coil Name",
+    "vr": "SH"
+  },
+
+  "0018 1310": {
+    "name": "Acquisition Matrix",
+    "vr": "US"
+  },
+
+  "0018 1312": {
+    "name": "In-plane Phase Encoding Direction",
+    "vr": "CS"
+  },
+
+  "0018 1314": {
+    "name": "Flip Angle",
+    "vr": "DS"
+  },
+
+  "0018 1315": {
+    "name": "Variable Flip Angle Flag",
+    "vr": "CS"
+  },
+
+  "0018 1316": {
+    "name": "SAR",
+    "vr": "DS"
+  },
+
+  "0018 5100": {
+    "name": "Patient Position",
+    "vr": "CS"
+  },
+
+  "0020 000D": {
+    "name": "Study Instance UID",
+    "vr": "UI"
+  },
+
+  "0020 000E": {
+    "name": "Study Instance UID",
+    "vr": "UI"
+  },
+
+  "0020 0010": {
+    "name": "Study ID",
+    "vr": "SH"
+  },
+
+  "0020 0011": {
+    "name": "Series Number",
+    "vr": "IS"
+  },
+
+  "0020 0012": {
+    "name": "Acquisition Number",
+    "vr": "IS"
+  },
+
+  "0020 0013": {
+    "name": "Instance Number",
+    "vr": "IS"
+  },
+
+  "0020 0032": {
+    "name": "Image Position (Patient)",
+    "vr": "DS"
+  },
+
+  "0020 0037": {
+    "name": "Image Orientation (Patient)",
+    "vr": "DS"
+  },
+
+  "0020 0052": {
+    "name": "Frame of Reference UID",
+    "vr": "UI"
+  },
+
+  "0020 0060": {
+    "name": "Laterality",
+    "vr": "CS"
+  },
+
+  "0020 0110": {
+    "name": "Temporal Resolution",
+    "vr": "DS"
+  },
+
+  "0020 1040": {
+    "name": "Position Reference Indicator",
+    "vr": "LO"
+  },
+
+  "0020 1041": {
+    "name": "Slice Location",
+    "vr": "DS"
+  },
+
+  "0028 0002": {
+    "name": "Samples per Pixel",
+    "vr": "US"
+  },
+
+  "0028 0004": {
+    "name": "Photometric Interpretation",
+    "vr": "CS"
+  },
+
+  "0028 0010": {
+    "name": "Rows",
+    "vr": "US"
+  },
+
+  "0028 0011": {
+    "name": "Columns",
+    "vr": "US"
+  },
+
+  "0028 0030": {
+    "name": "Pixel Spacing",
+    "vr": "DS"
+  },
+
+  "0028 0100": {
+    "name": "Bits Allocated",
+    "vr": "US"
+  },
+
+  "0028 0101": {
+    "name": "Bits Stored",
+    "vr": "US"
+  },
+
+  "0028 0102": {
+    "name": "High Bit",
+    "vr": "US"
+  },
+
+  "0028 0103": {
+    "name": "Pixel Representation",
+    "vr": "US"
+  },
+
+  "0028 0106": {
+    "name": "Smallest Image Pixel Value",
+    "reference tag": "0028 0103",
+    "reference name": "Pixel Representation",
+    "vr": {
+      "0": "US",
+      "1": "SS"
+    }
+  },
+
+  "0028 0107": {
+    "name": "Largest Image Pixel Value",
+    "reference tag": "0028 0103",
+    "reference name": "Pixel Representation",
+    "vr": {
+      "0": "US",
+      "1": "SS"
+    }
+  },
+
+  "0028 0120": {
+    "name": "Pixel Padding Value",
+    "reference tag": "0028 0103",
+    "reference name": "Pixel Representation",
+    "vr": {
+      "0": "US",
+      "1": "SS"
+    }
+  },
+
+  "0028 0303": {
+    "name": "Longitudinal Temporal Information Modified",
+    "vr": "CS"
+  },
+
+  "0028 1050": {
+    "name": "Window Center",
+    "vr": "DS"
+  },
+
+  "0028 1051": {
+    "name": "Window Width",
+    "vr": "DS"
+  },
+
+  "7FE0 0010": {
+    "name": "Pixel Data",
+    "reference tag": "0028 0100",
+    "reference name": "Bits Stored",
+    "vr": {
+      "8": "OB",
+      "16": "OW"
+    }
+  },
+
+  "FFFE E000": {
+    "name": "Item",
+    "vr": ""
+  },
+
+  "FFFE E00D": {
+    "name": "Item Delimitation Item",
+    "vr": ""
+  },
+
+  "FFFE E0DD": {
+    "name": "Sequence Delimitation Item",
+    "vr": ""
+  } 
+}

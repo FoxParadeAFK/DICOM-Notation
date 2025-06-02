@@ -9,3 +9,6 @@ func _ready() -> void:
 	reader.seek(128) # skip 'file preamble' 128 bytes
 	print(reader.get_buffer(4).get_string_from_ascii()) # 'dicom prefix' should spell 'DICM' 4 bytes
 	print(decoder.ReadElement()) # 'file meta information group length'
+
+	var metaInformationLength : int = valueInformation.get("File Meta Information Group Length") + reader.get_position()
+	while reader.get_position() < metaInformationLength: print(decoder.ReadElement())

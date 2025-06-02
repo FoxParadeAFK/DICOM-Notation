@@ -17,8 +17,10 @@ func _init(_reader : FileAccess, _valueInformation : Dictionary[String, Variant]
 
   #TODO - move them all into a different location
   valueRepresentationDictionary.set("CS", DecodeCodeString.new())
+  valueRepresentationDictionary.set("DA", DecodeDate.new())
   valueRepresentationDictionary.set("OB", DecodeOtherByteString.new())
   valueRepresentationDictionary.set("SH", DecodeShortString.new())
+  valueRepresentationDictionary.set("TM", DecodeTime.new())
   valueRepresentationDictionary.set("UI", DecodeUniqueIdentifier.new())
   valueRepresentationDictionary.set("UL", DecodeUnsignedLong.new())
 

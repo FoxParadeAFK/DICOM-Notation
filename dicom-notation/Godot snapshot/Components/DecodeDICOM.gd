@@ -12,3 +12,7 @@ func _ready() -> void:
 
 	var metaInformationLength : int = valueInformation.get("File Meta Information Group Length") + reader.get_position()
 	while reader.get_position() < metaInformationLength: print(decoder.ReadElement())
+
+	decoder.DeduceTransferSyntax(valueInformation.get("Transfer Syntax UID"))
+
+	while reader.get_position() < reader.get_length(): print(decoder.ReadElement())

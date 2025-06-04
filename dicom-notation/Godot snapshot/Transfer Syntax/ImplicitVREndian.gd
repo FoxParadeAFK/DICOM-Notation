@@ -23,8 +23,8 @@ func ReadValueRepresentation() -> String:
   if not tagEntry.has("reference name"): return tagEntry.get("vr")
 
   var referenceName : String = tagEntry.get("reference name")
-  var referenceValue : String = valueInformation.get(referenceName)
-  var tagEntryValueRepresentationDictionary : Dictionary[String, Variant] = tagEntry.get('vr')
+  var referenceValue : String = str(valueInformation.get(referenceName)[0])
+  var tagEntryValueRepresentationDictionary : Dictionary = tagEntry.get('vr')
   return tagEntryValueRepresentationDictionary.get(referenceValue, "|")
 
 func ReadValueLength() -> int:

@@ -20,15 +20,19 @@ func _init(_reader : FileAccess, _valueInformation : Dictionary[String, Variant]
   #TODO - vr: ae, at, cs, lo, pn, sh and uc can be multiple values
   #NOTE - vr lo, lt, pn, sh, st, ut rely on tags 0008,0005 for character list
   valueRepresentationDictionary.set("CS", DecodeCodeString.new())
+  valueRepresentationDictionary.set("DS", DecodeDecimalString.new())
   valueRepresentationDictionary.set("PN", DecodePersonName.new())
   valueRepresentationDictionary.set("DA", DecodeDate.new())
   valueRepresentationDictionary.set("LO", DecodeLongString.new())
+  valueRepresentationDictionary.set("IS", DecodeIntegerString.new())
   valueRepresentationDictionary.set("OB", DecodeOtherByteString.new())
+  valueRepresentationDictionary.set("OW", DecodeOtherWordString.new())
   valueRepresentationDictionary.set("SH", DecodeShortString.new())
   valueRepresentationDictionary.set("TM", DecodeTime.new())
   valueRepresentationDictionary.set("UI", DecodeUniqueIdentifier.new())
   valueRepresentationDictionary.set("UL", DecodeUnsignedLong.new())
   valueRepresentationDictionary.set("UN", DecodeUnknown.new())
+  valueRepresentationDictionary.set("US", DecodeUnsignedShort.new())
   valueRepresentationDictionary.set("SQ", DecodeSequenceOfItems.new(valueRepresentationDictionary, property, tagLibrary))
 
   # group 0x00 element 0x00 vl 0x0000 v 0xN/A 

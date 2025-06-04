@@ -18,6 +18,7 @@ var month : Dictionary[String, String] = {
 
 # can be either a single date or a duration range between two
 func Translate(_reader : FileAccess, _valueLength : int) -> Variant:
+  if _valueLength == 0: return ""
   if _valueLength > 18: return "?" # range matching maximum 18 bytes
   if _valueLength == 8: return FormatDate(_reader.get_buffer(_valueLength).get_string_from_ascii())
 

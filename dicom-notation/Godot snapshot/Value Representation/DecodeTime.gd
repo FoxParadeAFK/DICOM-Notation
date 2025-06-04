@@ -2,6 +2,7 @@ extends ValueRepresentation
 class_name DecodeTime
 
 func Translate(_reader : FileAccess, _valueLength : int) -> Variant:
+  if _valueLength == 0: return ""
   if _valueLength > 28: return "?" # range maximum length 28 bytes
   if _valueLength <= 16: return FormatTime(_reader.get_buffer(_valueLength).get_string_from_ascii())
 
@@ -13,7 +14,7 @@ func FormatTime(time : String) -> String:
   var SS : String = FormatSecond(time.substr(4, 2), time.substr(6, 1), "Seconds")
   var FFFFFF : String = FormatIntegral(time.substr(7, 6), "Seconds")
 
-  return "%s %s %s %s" % [HH, MM, SS, FFFFFF]
+  return "%s %s %s%s" % [HH, MM, SS, FFFFFF]
 
 func FormatIntegral(integral : String, padding : String) -> String:
   if integral.length() != 2: return ""
@@ -27,4 +28,3 @@ func FormatSecond(second : String, fractionalPoint : String, padding : String) -
 func FormatFractional(fractional : String, padding : String) -> String:
   if fractional.length() <= 0 or fractional.length() > 6: return ""
   return "%s %s" % [fractional, padding]
-

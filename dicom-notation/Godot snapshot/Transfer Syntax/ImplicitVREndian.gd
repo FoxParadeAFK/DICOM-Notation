@@ -29,8 +29,8 @@ func ReadValueRepresentation() -> String:
 
 func ReadValueLength() -> int:
   var valueLength : int = reader.get_32()
-  return 0 if valueLength == 0xFFFFFFF else valueLength
+  return 0 if valueLength == 0xFFFFFFFF else valueLength
 
 func ReadValue(_valueRepresentation : String, _valueLength : int) -> Variant:
-  if _valueLength == 0 or not valueRepresentationDictionary.has(_valueRepresentation): return "|"
+  if not valueRepresentationDictionary.has(_valueRepresentation): return valueRepresentationDictionary.get("UN").Translate(reader, _valueLength)
   return valueRepresentationDictionary.get(_valueRepresentation).Translate(reader, _valueLength)

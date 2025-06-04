@@ -1,0 +1,159 @@
+{
+	"File Meta Information Group Length": 194,
+	"File Meta Information Version": [
+		"0",
+		"1"
+	],
+	"Media Storage SOP Class UID": "1.2.840.10008.5.1.4.1.1.4",
+	"Media Storage SOP Instance UID": "1.3.6.1.4.1.14519.5.2.1.1706.4996.229920228613181132869097514796",
+	"Transfer Syntax UID": "1.2.840.10008.1.2",
+	"Implementation Class UID": "1.2.40.0.13.1.1.1",
+	"Implementation Version Name": "dcm4che-1.4.35",
+	"Specific Character Set": [
+		"ISO_IR 100"
+	],
+	"Image Type": [
+		"ORIGINAL",
+		"PRIMARY",
+		"OTHER"
+	],
+	"Instance Creation Date": "02 February, 1990",
+	"Instance Creation Time": "12 Hours 02 Minutes 59 Seconds",
+	"SOP Class UID": "1.2.840.10008.5.1.4.1.1.4",
+	"SOP Instance UID": "1.3.6.1.4.1.14519.5.2.1.1706.4996.229920228613181132869097514796",
+	"Study Date": "02 February, 1990",
+	"Series Date": "02 February, 1990",
+	"Acquisition Date": "02 February, 1990",
+	"Content Date": "02 February, 1990",
+	"Study Time": "00 Hours 00 Minutes 00 Seconds",
+	"Series Time": "00 Hours 00 Minutes 00 Seconds",
+	"Acquisition Time": "00 Hours 00 Minutes 00 Seconds",
+	"Content Time": "00 Hours 00 Minutes 00 Seconds",
+	"Accession Number": "2819497684894126",
+	"Modality": [
+		"MR"
+	],
+	"Manufacturer": [
+		"GE MEDICAL SYSTEMS"
+	],
+	"Referring Physician's Name": "",
+	"Study Description": [
+		"MRI HEAD WITHOUT CON"
+	],
+	"Series Description": [
+		"T2Post1 "
+	],
+	"Manufacturer's Model Name": [
+		"GENESIS_SIGNA "
+	],
+	"Patient's Name": "MRI-DIR-T2_4",
+	"Patient ID": [
+		"MRI-DIR-T2_4"
+	],
+	"Patient's Birth Date": "",
+	"Patient's Sex": "",
+	"Patient's Age": "",
+	"Patient's Size": "",
+	"Patient's Weight": "",
+	"Additional Patient History": "",
+	"Patient Identity Removed": [
+		"YES "
+	],
+	"De-identification Method": [
+		"Per DICOM PS 3.15 AnnexE. Details in 0012,0064"
+	],
+	"De-identification Method Code Sequence": [
+		{
+			"Code Value": "113100",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Basic Application Confidentiality Profile "
+			]
+		},
+		{
+			"Code Value": "113101",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Clean Pixel Data Option "
+			]
+		},
+		{
+			"Code Value": "113104",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Clean Structured Content Option "
+			]
+		},
+		{
+			"Code Value": "113105",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Clean Descriptors Option"
+			]
+		},
+		{
+			"Code Value": "113107",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Longitudinal Temporal Information Modified Dates Option"
+			]
+		},
+		{
+			"Code Value": "113108",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Patient Characteristics Option "
+			]
+		},
+		{
+			"Code Value": "113109",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Device Identity Option "
+			]
+		},
+		{
+			"Code Value": "113111",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Safe Private Option"
+			]
+		}
+	],
+	"0013 0010": "",
+	"0013 1010": "",
+	"0013 1013": "",
+	"Body Part Examined": "",
+	"Scanning Sequence": [
+		"SE"
+	],
+	"Sequence Variant": [
+		"OSP "
+	],
+	"Scan Options": [
+		"SAT_GEMS",
+		"NPW",
+		"VB_GEMS",
+		"SEQ_GEMS",
+		"TRF_GEMS",
+		"SP "
+	],
+	"MR Acquisition Type": [
+		"2D"
+	],
+	"Angio Flag": [
+		"N "
+	],
+	"Slice Thickness": "",
+	"Repetition Time": "",
+	"Echo Time": "",
+	"Number of Averages": "",
+	"Imaging Frequency": "",
+	"Imaged Nucleus": "H1",
+	"Echo Number(s)": "",
+	"Magnetic Field Strength": "",
+	"Spacing Between Slices": "",
+	"Echo Train Length": "",
+	"Percent Sampling": "",
+	"Percent Phase Field of View": ""
+}

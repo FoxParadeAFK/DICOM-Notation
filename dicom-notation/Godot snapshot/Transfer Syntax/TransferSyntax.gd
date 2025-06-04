@@ -1,4 +1,4 @@
-extends Node3D
+extends Object
 class_name TransferSyntax
 
 var reader : FileAccess

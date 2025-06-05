@@ -2,5 +2,8 @@
 
 [ext_resource type="Script" uid="uid://de0u4l3c0mr8f" path="res://Godot snapshot/Components/DecodeDICOM.gd" id="1_38hn5"]
 
-[node name="Main Scene" type="Node3D"]
+[node name="Main Scene" type="Node3D" node_paths=PackedStringArray("sprite3D")]
 script = ExtResource("1_38hn5")
+sprite3D = NodePath("Sprite3D")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]

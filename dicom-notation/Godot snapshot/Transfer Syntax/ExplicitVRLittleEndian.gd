@@ -3,7 +3,7 @@ class_name ExplicitVRLittleEndian
 
 var valueRepresentation : String
 
-func _init(_reader : FileAccess, _valueRepresentationDictionary : Dictionary[String, ValueRepresentation]) -> void: super._init(_reader, _valueRepresentationDictionary)
+func _init(_reader : FileAccess, _valueRepresentationDictionary : Dictionary[String, ValueRepresentation], _tagLibrary : Dictionary) -> void: super._init(_reader, _valueRepresentationDictionary, _tagLibrary)
 
 func ReadTag() -> String:
   var group : PackedByteArray = Reverse(reader.get_buffer(2))

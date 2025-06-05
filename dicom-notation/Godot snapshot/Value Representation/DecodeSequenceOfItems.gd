@@ -2,11 +2,12 @@ extends ValueRepresentation
 class_name DecodeSequenceOfItems
 
 var valueRepresentationDictionary : Dictionary[String, ValueRepresentation]
-var property : DICOMProperty
+var transferSyntaxUID : TransferSyntaxUID
 var tagLibrary : Dictionary
-func _init(_valueRepresentationDictionary : Dictionary[String, ValueRepresentation], _property : DICOMProperty, _tagLibrary : Dictionary) -> void: 
+
+func _init(_valueRepresentationDictionary : Dictionary[String, ValueRepresentation], _transferSyntaxUID : TransferSyntaxUID, _tagLibrary : Dictionary) -> void: 
   valueRepresentationDictionary = _valueRepresentationDictionary
-  property = _property
+  transferSyntaxUID = _transferSyntaxUID
   tagLibrary = _tagLibrary
 
 #FIXME - there is a lot in terms of the different types of vr avilable 
@@ -28,25 +29,18 @@ func Translate(_reader : FileAccess, _valueLength : int) -> Variant:
       sequence.append(item.duplicate())
       continue
     
-    elif element["name"] == "Sequence Delimitation Item":
-      continue
-    
-    else:
-      item.set(element["name"], element["value"])
+    elif element["name"] == "Sequence Delimitation Item": continue
+    item.set(element["name"], element["value"])
 
   return sequence
 
-func TranslateTagName(_tag : String) -> String:
-  if not tagLibrary.has(_tag): return "-".repeat(50)
-  return tagLibrary.get(_tag)['name']
-
 func ReadElement() -> Dictionary[String, Variant]:
-  var tag : String = property.transferSyntax.ReadTag()
-  var valueRepresentation : String = property.transferSyntax.ReadValueRepresentation()
-  var valueLength : int = property.transferSyntax.ReadValueLength()
-  var value : Variant = property.transferSyntax.ReadValue(valueRepresentation, valueLength)
+  var tag : String = transferSyntaxUID.transferSyntax.ReadTag()
+  var name : String = transferSyntaxUID.transferSyntax.TranslateTagName(tag)
+  var valueRepresentation : String = transferSyntaxUID.transferSyntax.ReadValueRepresentation()
+  var valueLength : int = transferSyntaxUID.transferSyntax.ReadValueLength()
+  var value : Variant = transferSyntaxUID.transferSyntax.ReadValue(valueRepresentation, valueLength)
 
-  var name : String = TranslateTagName(tag)
   return {
     "name": name,
     "value": value

@@ -2,13 +2,11 @@ extends TransferSyntax
 class_name ImplicitVREndian
 
 var valueInformation : Dictionary[String, Variant]
-var tagLibrary : Dictionary
 var tag : String
 
-func _init(_reader : FileAccess, _valueRepresentationDictionary : Dictionary[String, ValueRepresentation], _valueInformation : Dictionary[String, Variant], _tagLibrary : Dictionary) -> void: 
-  super._init(_reader, _valueRepresentationDictionary)
+func _init(_reader : FileAccess, _valueRepresentationDictionary : Dictionary[String, ValueRepresentation], _tagLibrary : Dictionary, _valueInformation : Dictionary[String, Variant]) -> void: 
+  super._init(_reader, _valueRepresentationDictionary, _tagLibrary)
   valueInformation = _valueInformation
-  tagLibrary = _tagLibrary
 
 func ReadTag() -> String:
   var group : PackedByteArray = Reverse(reader.get_buffer(2))

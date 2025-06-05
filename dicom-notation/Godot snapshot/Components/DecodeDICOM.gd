@@ -11,22 +11,19 @@ func _ready() -> void:
 	print(decoder.ReadElement()) # 'file meta information group length'
 
 	var metaInformationLength : int = valueInformation.get("File Meta Information Group Length") + reader.get_position()
-	while reader.get_position() < metaInformationLength: print(decoder.ReadElement())
+	while reader.get_position() < metaInformationLength: print(decoder.ReadElement()) # meta information
 
 	decoder.DeduceTransferSyntax(valueInformation.get("Transfer Syntax UID"))
 
-	while reader.get_position() < reader.get_length(): print(decoder.ReadElement())
+	while reader.get_position() < reader.get_length(): print(decoder.ReadElement()) # file data
 	
-	var pixelData : String = JSON.stringify(valueInformation.get("Pixel Data"))
 	var fileData : Dictionary[String, Variant] = valueInformation.duplicate(true)
 	fileData.erase("Pixel Data")
 
-	var fileFormat : String = JSON.stringify(fileData, "\t", false)
-
 	var json = FileAccess.open("res://Godot snapshot/Parsed Data/1-01.json", FileAccess.WRITE)
-	json.store_string(fileFormat)
+	json.store_string(JSON.stringify(fileData, "\t", false))
 	json.close()
 
 	var raw = FileAccess.open("res://Godot snapshot/Parsed Data/1-01.raw", FileAccess.WRITE)
-	raw.store_string(pixelData)
+	raw.store_string(JSON.stringify(valueInformation["Pixel Data"]))
 	raw.close()

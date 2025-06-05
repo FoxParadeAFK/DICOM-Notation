@@ -1,9 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://hqf103jtba7s"]
+[gd_scene load_steps=20 format=3 uid="uid://hqf103jtba7s"]
 
 [ext_resource type="Script" uid="uid://de0u4l3c0mr8f" path="res://Godot snapshot/Components/DecodeDICOM.gd" id="1_38hn5"]
+[ext_resource type="Texture2D" uid="uid://dpdt04ewpteja" path="res://Godot snapshot/Parsed Data/1-01.png" id="2_qwf8x"]
+[ext_resource type="Texture2D" uid="uid://6iov3wmehgkk" path="res://Godot snapshot/Parsed Data/1-02.png" id="3_35twj"]
+[ext_resource type="Texture2D" uid="uid://dljd2q6fgbup8" path="res://Godot snapshot/Parsed Data/1-03.png" id="4_5qapv"]
+[ext_resource type="Texture2D" uid="uid://bx7kq2omyd4ci" path="res://Godot snapshot/Parsed Data/1-04.png" id="5_aikou"]
+[ext_resource type="Texture2D" uid="uid://dhk06h058eemc" path="res://Godot snapshot/Parsed Data/1-05.png" id="6_wtn8s"]
+[ext_resource type="Texture2D" uid="uid://de4em6h03jbuq" path="res://Godot snapshot/Parsed Data/1-06.png" id="7_s4hlt"]
+[ext_resource type="Texture2D" uid="uid://cnguj64nsemk5" path="res://Godot snapshot/Parsed Data/1-07.png" id="8_11m16"]
+[ext_resource type="Texture2D" uid="uid://cyt06garjdlrv" path="res://Godot snapshot/Parsed Data/1-08.png" id="9_wtn8s"]
+[ext_resource type="Texture2D" uid="uid://b1oasqq4s71bc" path="res://Godot snapshot/Parsed Data/1-09.png" id="10_5yu2j"]
+[ext_resource type="Texture2D" uid="uid://cg71g2xxdxp5r" path="res://Godot snapshot/Parsed Data/1-10.png" id="11_ks7ed"]
+[ext_resource type="Texture2D" uid="uid://cu7a4hucqg6w4" path="res://Godot snapshot/Parsed Data/1-11.png" id="12_e4rl2"]
+[ext_resource type="Texture2D" uid="uid://bcyaot2amikfo" path="res://Godot snapshot/Parsed Data/1-12.png" id="13_8y6eq"]
+[ext_resource type="Texture2D" uid="uid://dnjg657q8vv31" path="res://Godot snapshot/Parsed Data/1-13.png" id="14_e4rl2"]
+[ext_resource type="Texture2D" uid="uid://bejqkiswtnl5a" path="res://Godot snapshot/Parsed Data/1-14.png" id="15_8y6eq"]
+[ext_resource type="Texture2D" uid="uid://76s0ti3qtiqf" path="res://Godot snapshot/Parsed Data/1-15.png" id="16_mq5i7"]
+[ext_resource type="Texture2D" uid="uid://lv0eq4s33hnn" path="res://Godot snapshot/Parsed Data/1-16.png" id="17_g25p4"]
+[ext_resource type="Texture2D" uid="uid://b1agv2cb12uxx" path="res://Godot snapshot/Parsed Data/1-17.png" id="18_r1gp3"]
+[ext_resource type="Texture2D" uid="uid://7ktj0e033x2" path="res://Godot snapshot/Parsed Data/1-18.png" id="19_saas1"]
 
 [node name="Main Scene" type="Node3D" node_paths=PackedStringArray("sprite3D")]
 script = ExtResource("1_38hn5")
-sprite3D = NodePath("Sprite3D")
+sprite3D = NodePath("1-01")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="1-01" type="Sprite3D" parent="."]
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("2_qwf8x")
+
+[node name="1-02" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("3_35twj")
+
+[node name="1-03" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("4_5qapv")
+
+[node name="1-04" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("5_aikou")
+
+[node name="1-05" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("6_wtn8s")
+
+[node name="1-06" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("7_s4hlt")
+
+[node name="1-07" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("8_11m16")
+
+[node name="1-08" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("9_wtn8s")
+
+[node name="1-09" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("10_5yu2j")
+
+[node name="1-10" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("11_ks7ed")
+
+[node name="1-11" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("12_e4rl2")
+
+[node name="1-12" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("13_8y6eq")
+
+[node name="1-13" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("14_e4rl2")
+
+[node name="1-14" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("15_8y6eq")
+
+[node name="1-15" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("16_mq5i7")
+
+[node name="1-16" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("17_g25p4")
+
+[node name="1-17" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("18_r1gp3")
+
+[node name="1-18" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)
+modulate = Color(1, 1, 1, 0.12549)
+texture = ExtResource("19_saas1")

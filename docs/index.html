@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Page Title</title>
+    <title>DICOM Notation</title>
   </head>
   <body>
 
-    <p>DICOM (Digital Imaging and Communications In Medicine) is a standard designed for the storage and exchange of medical images. They have been a central pillar to the evolution of modern radiology imaging. You may be aware of its applications in computed tomography (CT), magnetic resonance imaging (MRI), among others.</p>
+    <p>DICOM (Digital Imaging and Communications In Medicine) is a standard designed for the storage and exchange of medical images. They have been a central pillar in the evolution of modern radiological imaging today. It has uses in computed tomography (CT), magnetic resonance imaging (MRI), and ultrasonography, among others.</p>
 
-    <p>DICOM was a topic I stumbled upon whilst researching possible final-year project ideas. In this article, I'll cover the basics of DICOM, examples of deciphered information, and renders of images from within.</p>
+    <p>DICOM was a topic I stumbled upon whilst researching possible final-year project ideas. In this article, I am going to cover the basics of DICOM, provide examples of parsed outputs and renders, and external materials to reference.</p>
 
-    <p>This project is deeply inspired by Sebastian Lague's "Coding Adventures: Rendering Text". In the video, he showcases his journey parsing TrueType files, a font standard designed by Apple. Lague used C# and Unity to parse and render, although in my case, I'll use GDScript and Godot instead. I don't believe the substitution should create any unfavourable side effects. Hopefully anyway.</p>
+    <p><i>This project is deeply inspired by Sebastian Lague's "Coding Adventures: Rendering Text". In the video, he showcases his time parsing TrueType files. Lague used C# and Unity to parse and render, although in my case, I will be using GDScript and Godot instead. I do not believe that change will create any odd side effects. Hopefully anyway.</i></p>
 
     <h2>A Dictionary Of Elements</h2>
+
+    <p>DICOM files are arranged using keys and values, much like dictionaries. Each entry of data is referred to as a data element. Generally speaking, a data element is composed of several parts. I will name the specific parts later. Each part holds a semantic detail needed to either decode or understand the value.</p>
+
+    <p>If we analysed a data element, we would typically find the tag, value representation, value length, and the value.</p>
+
+    <p>The tag is a unique identifier. In other words, a data element's key. It is composed of a 16-bit group number and a 16-bit element number. This ID serves as a reference to its documentation entry. It also notes the start of the data element.</p>
+
+    <p>The value representation and the value length both provide semantical meaning to the value. The value representation denotes the data type and the format, whilst the value length indicates the length of the value. The length of the value representation and value length can vary. However, the value representation will carry a 2-character code somewhere.</p>
+
+    <p>Another key point is the concept of transfer syntax. It denotes how the data was encoded into the file. Transfer syntaxes can change from scan to scan and even element to element. There are many different transfer syntaxes available, though the two to focus on are Implicit VR Endian and Explicit VR Little Endian.</p>
 
   </body>
 </html>

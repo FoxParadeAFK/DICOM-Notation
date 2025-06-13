@@ -4,6 +4,7 @@
     <title>DICOM Notation</title>
   </head>
   <body>
+    <h2>DICOM Notation</h2>
 
     <p>DICOM (Digital Imaging and Communications In Medicine) is a standard designed for the storage and exchange of medical images. They have been a central pillar in the evolution of modern radiological imaging today. It has uses in computed tomography (CT), magnetic resonance imaging (MRI), and ultrasonography, among others.</p>
 
@@ -22,6 +23,86 @@
     <p>The value representation and the value length both provide semantical meaning to the value. The value representation denotes the data type and the format, whilst the value length indicates the length of the value. The length of the value representation and value length can vary. However, the value representation will carry a 2-character code somewhere.</p>
 
     <p>Another key point is the concept of transfer syntax. It denotes how the data was encoded into the file. Transfer syntaxes can change from scan to scan and even element to element. There are many different transfer syntaxes available, though the two to focus on are Implicit VR Endian and Explicit VR Little Endian.</p>
+    
+    <table>
+      <tr>
+        <th colspan="6">Table 7.1-1. Data Element with Explicit VR of OB, OW, OF, SQ, UT or UN</th>
+      </tr>
+      <tr>
+        <th colspan="2">Tag</th>
+        <th colspan="2">VR</th>
+        <th>Value Length</th>
+        <th>Value</th>
+      </tr>
+      <tr> 
+        <td>Group Number (16-bit integer)</td>
+        <td>Element Number (16-bit integer)</td>
+        <td>VR (2 byte character string) of "OB", "OW", "OF", "SQ", "UT" or "UN"</td>
+        <td>Reserved (2 bytes) set to a value of 0000H</td>
+        <td>32-bit unsigned integer</td>
+        <td>Even number of bytes containing the Data Element Value(s) encoded according to the VR and negotiated Transfer Syntax. Delimited with Sequence Delimitation Item if of Undefined Length.</td>
+      </tr>
+      <tr> 
+        <td>2 bytes</td>
+        <td>2 bytes</td>
+        <td>2 bytes</td>
+        <td>2 bytes</td>
+        <td>4 bytes</td>
+        <td>'Value Length' bytes if of Explicit Length</td>
+      </tr>
+    </table>
 
+    <table>
+      <tr>
+        <th colspan="5">Table 7.1-2. Data Element with Explicit VR other than as shown in Table 7.1-1</th>
+      </tr>
+      <tr>
+        <th colspan="2">Tag</th>
+        <th>VR</th>
+        <th>Value Length</th>
+        <th>Value</th>
+      </tr>
+      <tr> 
+        <td>Group Number (16-bit integer)</td>
+        <td>Element Number (16-bit integer)</td>
+        <td>VR (2 byte character string)</td>
+        <td>(16-bit unsigned integer)</td>
+        <td>Even number of bytes containing the Data Element Value(s) encoded according to the VR and negotiated Transfer Syntax.</tr>
+      </tr>
+      <tr> 
+        <td>2 bytes</td>
+        <td>2 bytes</td>
+        <td>2 bytes</td>
+        <td>2 bytes</td>
+        <td>'Value Length' bytes</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th colspan="4">Table 7.1-3. Data Element with Implicit VR</th>
+      </tr>
+      <tr>
+        <th colspan="2">Tag</th>
+        <th>Value Length</th>
+        <th>Value</th>
+      </tr>
+      <tr> 
+        <td>Group Number (16-bit integer)</td>
+        <td>Element Number (16-bit integer)</td>
+        <td>32-bit unsigned integer</td>
+        <td>Even number of bytes containing the Data Elements Value encoded according to the VR specified in PS3.6 and the negotiated Transfer Syntax. Delimited with Sequence Delimitation Item if of Undefined Length.</tr>
+      </tr>
+      <tr> 
+        <td>2 bytes</td>
+        <td>2 bytes</td>
+        <td>4 bytes</td>
+        <td>'Value Length' bytes or Undefined Length</td>
+      </tr>
+    </table>
+
+    <p>From the table, we can see that regardless of transfer syntax, the tag and value are always present. What varies is the value representation and value length. It will require different methods to read or receive those parts to decode the value. This means that we need a system that can adapt to changing transfer syntaxes.</p>
+
+    <p>For starters, let us assume we have a new DICOM file. We will be first reading the DICOM meta information, with tags 0200 xxxx. The transfer syntax is always Implicit VR Endian.</p>
   </body>
 </html>

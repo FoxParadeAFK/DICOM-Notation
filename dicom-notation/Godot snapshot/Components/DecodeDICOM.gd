@@ -3,7 +3,7 @@ extends Node3D
 const folder : String = "1.000000-T2Post1-61265"
 const relativeDirectory : String = "res://%s" % folder
 const rawPath : String = "res://Parsed/%s/Raw" % folder
-const pngPath : String = "res://Parsed/%s/PNG" % folder
+const jsonPath : String = "res://Parsed/%s/JSON" % folder
 
 func ReadDirectory(path : String, target : String) -> Array:
 	var directory : DirAccess = DirAccess.open(path)
@@ -27,33 +27,21 @@ func ReadDICOM(file : String) -> void:
 	while reader.get_position() < reader.get_length(): decoder.ReadElement() # file data
 
 	SaveRaw(file, valueInformation)
-	RenderImage(file, valueInformation)
-
-func RenderImage(file : String, valueInformation : Dictionary[String, Variant]) -> void:
-	var pixelData : FileAccess = FileAccess.open("%s/%s" % [rawPath, file.replace(".dcm", ".raw")], FileAccess.READ)
-	var bytes : PackedByteArray
-	while pixelData.get_position() < pixelData.get_length():
-		var byte : int = round(pixelData.get_16() / (valueInformation["Largest Image Pixel Value"][0] / 256))
-		bytes.append(byte)
-
-	Image.create_from_data(valueInformation["Columns"][0], valueInformation["Rows"][0], false, Image.FORMAT_L8, bytes).save_png("%s/%s" % [pngPath, file.replace(".dcm", ".png")])
+	SaveJSON(file, valueInformation)
 
 func SaveRaw(file : String, valueInformation : Dictionary[String, Variant]) -> void:
+	#TODO - assumes OW however it can be OB in which this method is not necessary
+	#NOTE - we can tell based on the image height and width. If OW, the value will be double in length of height * width
 	var raw : FileAccess = FileAccess.open("%s/%s" % [rawPath, file.replace(".dcm", ".raw")], FileAccess.WRITE)
 	for word in valueInformation["Pixel Data"]: raw.store_16(word)
-	
 	raw.close()
+
+func SaveJSON(file : String, valueInformation : Dictionary[String, Variant]) -> void:
+	valueInformation.erase("Pixel Data")
+	var json : FileAccess = FileAccess.open("%s/%s" % [jsonPath, file.replace(".dcm", ".json")], FileAccess.WRITE)
+	json.store_string(JSON.stringify(valueInformation))
+	json.close()
 
 func _ready() -> void:
 	var content : PackedStringArray = ReadDirectory(relativeDirectory, ".dcm")
 	for file in content: ReadDICOM(file)
-
-	var imagePaths : Array = ReadDirectory(pngPath, ".png")
-	for index in range(len(imagePaths)):
-		var image : Texture2D = load("%s/%s" % [pngPath, imagePaths[index]])
-		var renderer : Sprite3D = Sprite3D.new()
-
-		renderer.texture = image
-		renderer.modulate.a = 0.1
-		renderer.position.z = -renderer.pixel_size * index
-		add_child(renderer)

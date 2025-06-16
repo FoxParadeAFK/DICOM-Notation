@@ -18,6 +18,10 @@ glow_enabled = true
 [node name="Main Scene" type="Node3D"]
 script = ExtResource("1_38hn5")
 
+[node name="DICOM" type="Node3D" parent="."]
+
+[node name="Render" type="Node3D" parent="."]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7amwi")
 
@@ -25,4 +29,3 @@ environment = SubResource("Environment_7amwi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 projection = 1
 size = 6.0
-metadata/_edit_lock_ = true

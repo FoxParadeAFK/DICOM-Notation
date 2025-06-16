@@ -5,11 +5,11 @@ const relativeDirectory : String = "res://%s" % folder
 const rawPath : String = "res://Parsed/%s/Raw" % folder
 const pngPath : String = "res://Parsed/%s/PNG" % folder
 
-func ReadDirectory(path : String) -> PackedStringArray:
+func ReadDirectory(path : String, target : String) -> Array:
 	var directory : DirAccess = DirAccess.open(path)
 	if not directory: return PackedStringArray()
 
-	return directory.get_files()
+	return Array(directory.get_files()).filter(func(file : String): return file.ends_with(target))
 
 func ReadDICOM(file : String) -> void:
 	var valueInformation : Dictionary[String, Variant]
@@ -36,7 +36,7 @@ func RenderImage(file : String, valueInformation : Dictionary[String, Variant]) 
 		var byte : int = round(pixelData.get_16() / (valueInformation["Largest Image Pixel Value"][0] / 256))
 		bytes.append(byte)
 
-	Image.create_from_data(512, 512, false, Image.FORMAT_L8, bytes).save_png("%s/%s" % [pngPath, file.replace(".dcm", ".png")])
+	Image.create_from_data(valueInformation["Columns"][0], valueInformation["Rows"][0], false, Image.FORMAT_L8, bytes).save_png("%s/%s" % [pngPath, file.replace(".dcm", ".png")])
 
 func SaveRaw(file : String, valueInformation : Dictionary[String, Variant]) -> void:
 	var raw : FileAccess = FileAccess.open("%s/%s" % [rawPath, file.replace(".dcm", ".raw")], FileAccess.WRITE)
@@ -45,5 +45,15 @@ func SaveRaw(file : String, valueInformation : Dictionary[String, Variant]) -> v
 	raw.close()
 
 func _ready() -> void:
-	var content : PackedStringArray = ReadDirectory(relativeDirectory)
+	var content : PackedStringArray = ReadDirectory(relativeDirectory, ".dcm")
 	for file in content: ReadDICOM(file)
+
+	var imagePaths : Array = ReadDirectory(pngPath, ".png")
+	for index in range(len(imagePaths)):
+		var image : Texture2D = load("%s/%s" % [pngPath, imagePaths[index]])
+		var renderer : Sprite3D = Sprite3D.new()
+
+		renderer.texture = image
+		renderer.modulate.a = 0.1
+		renderer.position.z = -renderer.pixel_size * index
+		add_child(renderer)

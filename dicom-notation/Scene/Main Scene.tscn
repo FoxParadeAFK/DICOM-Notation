@@ -20,3 +20,9 @@ script = ExtResource("1_38hn5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7amwi")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+projection = 1
+size = 6.0
+metadata/_edit_lock_ = true

@@ -16,9 +16,9 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Main Scene" type="Node3D"]
-script = ExtResource("1_38hn5")
 
 [node name="DICOM" type="Node3D" parent="."]
+script = ExtResource("1_38hn5")
 
 [node name="Render" type="Node3D" parent="."]
 

@@ -5,6 +5,10 @@ var reader : FileAccess
 var valueRepresentationDictionary : Dictionary[String, ValueRepresentation]
 var tagLibrary : Dictionary
 
+func Reverse(_stream : PackedByteArray) -> PackedByteArray:
+  _stream.reverse()
+  return _stream
+
 func _init(_reader : FileAccess, _valueRepresentationDictionary : Dictionary[String, ValueRepresentation], _tagLibrary : Dictionary) -> void:
   reader = _reader
   valueRepresentationDictionary = _valueRepresentationDictionary
@@ -12,16 +16,18 @@ func _init(_reader : FileAccess, _valueRepresentationDictionary : Dictionary[Str
 
 func ReadTag() -> String: return ""
 
-func ReadValueRepresentation() -> String: return ""
-
-func ReadValueLength() -> int: return 0
-
-func ReadValue(_valueRepresentation : String, _valueLength : int) -> Variant: return ""
-
 func TranslateTagName(_tag : String) -> String:
   if not tagLibrary.has(_tag): return "-".repeat(50)
   return tagLibrary.get(_tag)['name']
 
-func Reverse(_stream : PackedByteArray) -> PackedByteArray:
-  _stream.reverse()
-  return _stream
+func ReadValueRepresentation() -> String: return ""
+
+func ReadValueLength() -> int: return 0
+
+func ReadItemLength(_name : String) -> int:
+  if _name not in ["Item", "Item Delimitation Item", "Sequence Delimitation Item"]: return 0
+  return reader.get_32()
+
+
+func ReadValue(_valueRepresentation : String, _valueLength : int) -> Variant: return ""
+

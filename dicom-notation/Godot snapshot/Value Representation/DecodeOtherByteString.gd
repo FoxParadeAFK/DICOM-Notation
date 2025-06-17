@@ -5,6 +5,6 @@ class_name DecodeOtherByteString
 func Translate(_reader : FileAccess, _valueLength : int) -> Variant:
   if _valueLength == 0: return ""
   var stream : PackedStringArray
-  for byte in range(_valueLength): stream.append("%s" % _reader.get_8())
+  for byte in _valueLength: stream.append("%s" % _reader.get_8())
 
   return stream

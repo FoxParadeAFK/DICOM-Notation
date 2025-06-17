@@ -30,7 +30,7 @@ func _init(_reader : FileAccess, _valueInformation : Dictionary[String, Variant]
   valueRepresentationDictionary.set("UL", DecodeUnsignedLong.new())
   valueRepresentationDictionary.set("UN", DecodeUnknown.new())
   valueRepresentationDictionary.set("US", DecodeUnsignedShort.new())
-  valueRepresentationDictionary.set("SQ", DecodeSequenceOfItems.new(valueRepresentationDictionary, transferSyntaxUID, tagLibrary))
+  valueRepresentationDictionary.set("SQ", DecodeSequenceOfItems.new(transferSyntaxUID))
   valueRepresentationDictionary.set("SH", DecodeShortString.new())
 
   # group 0x00 element 0x00 vl 0x0000 v 0xN/A 

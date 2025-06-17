@@ -1,6 +1,7 @@
 extends TransferSyntax
 class_name ExplicitVRLittleEndian
 
+var specialValueRepresentation : Array[String] = ["OB", "OW", "OF", "SQ", "UT", "UN"]
 var valueRepresentation : String
 
 func _init(_reader : FileAccess, _valueRepresentationDictionary : Dictionary[String, ValueRepresentation], _tagLibrary : Dictionary) -> void: super._init(_reader, _valueRepresentationDictionary, _tagLibrary)
@@ -12,12 +13,13 @@ func ReadTag() -> String:
 
 func ReadValueRepresentation() -> String:
   valueRepresentation = reader.get_buffer(2).get_string_from_ascii()
-  if valueRepresentation in ["OB", "OW", "OF", "SQ", "UT", "UN"]: reader.get_buffer(2) # skip reserved bytes 0x0000
+  if valueRepresentation in specialValueRepresentation: reader.get_buffer(2) # skip reserved bytes 0x0000
   return valueRepresentation
 
 func ReadValueLength() -> int: 
-  return reader.get_32() if valueRepresentation in ["OB", "OW", "OF", "SQ", "UT", "UN"] else reader.get_16()
+  var valueLength : int = reader.get_32() if valueRepresentation in specialValueRepresentation else reader.get_16()
+  return 0 if valueLength == 0xFFFFFFFF else valueLength
 
 func ReadValue(_valueRepresentation : String, _valueLength : int) -> Variant: 
-  if _valueLength == 0 or not valueRepresentationDictionary.has(_valueRepresentation): return "|"
+  if not valueRepresentationDictionary.has(_valueRepresentation): return valueRepresentationDictionary.get("UN").Translate(reader, _valueLength)
   return valueRepresentationDictionary.get(_valueRepresentation).Translate(reader, _valueLength)

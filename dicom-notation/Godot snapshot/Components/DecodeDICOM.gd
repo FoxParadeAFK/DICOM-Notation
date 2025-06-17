@@ -1,6 +1,6 @@
 extends Node3D
 
-const folder : String = "1.000000-T2Post1-61265"
+const folder : String = "05-27-2004-NA-Outside Read or Comparison NEURO CT-84907/740.000000-Reformatted-13065" # not need for / at the beginning or end
 const relativeDirectory : String = "res://%s" % folder
 const rawPath : String = "res://Parsed/%s/Raw" % folder
 const jsonPath : String = "res://Parsed/%s/JSON" % folder
@@ -21,13 +21,14 @@ func ReadDICOM(file : String) -> void:
 	decoder.ReadElement() # "file meta information group length"
 
 	var metaInformationLength : int = valueInformation.get("File Meta Information Group Length") + reader.get_position()
-	while reader.get_position() < metaInformationLength: decoder.ReadElement() # meta information
+	while reader.get_position() < metaInformationLength: 
+		print(decoder.ReadElement()) # meta information
 	decoder.DeduceTransferSyntax(valueInformation.get("Transfer Syntax UID"))
 
-	while reader.get_position() < reader.get_length(): decoder.ReadElement() # file data
+	while reader.get_position() < reader.get_length(): print(decoder.ReadElement()) # file data
 
-	SaveRaw(file, valueInformation)
-	SaveJSON(file, valueInformation)
+	# SaveRaw(file, valueInformation)
+	# SaveJSON(file, valueInformation)
 
 func SaveRaw(file : String, valueInformation : Dictionary[String, Variant]) -> void:
 	#TODO - assumes OW however it can be OB in which this method is not necessary
@@ -39,9 +40,12 @@ func SaveRaw(file : String, valueInformation : Dictionary[String, Variant]) -> v
 func SaveJSON(file : String, valueInformation : Dictionary[String, Variant]) -> void:
 	valueInformation.erase("Pixel Data")
 	var json : FileAccess = FileAccess.open("%s/%s" % [jsonPath, file.replace(".dcm", ".json")], FileAccess.WRITE)
-	json.store_string(JSON.stringify(valueInformation))
+	json.store_string(JSON.stringify(valueInformation, "\t", false))
 	json.close()
 
 func _ready() -> void:
 	var content : PackedStringArray = ReadDirectory(relativeDirectory, ".dcm")
-	for file in content: ReadDICOM(file)
+	# for file in content: ReadDICOM(file)
+
+	ReadDICOM(content[0])
+

@@ -1,26 +1,20 @@
 extends ValueRepresentation
 class_name DecodeSequenceOfItems
 
-var valueRepresentationDictionary : Dictionary[String, ValueRepresentation]
 var transferSyntaxUID : TransferSyntaxUID
-var tagLibrary : Dictionary
+var sequence : Array[Dictionary] 
+var item : Dictionary[String, Variant]
+var element : Dictionary[String, Variant]
 
-func _init(_valueRepresentationDictionary : Dictionary[String, ValueRepresentation], _transferSyntaxUID : TransferSyntaxUID, _tagLibrary : Dictionary) -> void: 
-  valueRepresentationDictionary = _valueRepresentationDictionary
+func _init(_transferSyntaxUID : TransferSyntaxUID) -> void: 
   transferSyntaxUID = _transferSyntaxUID
-  tagLibrary = _tagLibrary
 
-#FIXME - there is a lot in terms of the different types of vr avilable 
-#TODO - intergrate a version of explicit and implicit with the type within the transfer syntax
+#FIXME - we only have unknown length. need to factor in the option of defined length
 func Translate(_reader : FileAccess, _valueLength : int) -> Variant:
-  var sequence : Array[Dictionary] 
-  var item : Dictionary[String, Variant]
-  var element : Dictionary[String, Variant] = {
-    "name": "",
-    "value": ""
-  }
-  while element["name"] != "Sequence Delimitation Item":
-    element = ReadElement()
+  while element.get("name", "") != "Sequence Delimitation Item":
+    var header : Dictionary[String, Variant] = DeduceTag()
+    element = ReadElement(header["tag"], header["name"], header["valueLength"])
+
     if element["name"] == "Item":
       item.clear()
       continue
@@ -34,14 +28,18 @@ func Translate(_reader : FileAccess, _valueLength : int) -> Variant:
 
   return sequence
 
-func ReadElement() -> Dictionary[String, Variant]:
+func DeduceTag() -> Dictionary[String, Variant]:
   var tag : String = transferSyntaxUID.transferSyntax.ReadTag()
   var name : String = transferSyntaxUID.transferSyntax.TranslateTagName(tag)
+  var valueLength : int = transferSyntaxUID.transferSyntax.ReadItemLength(name)
+
+  return { "tag": tag, "name": name, "valueLength": valueLength }
+
+func ReadElement(_tag : String, _name : String, _valueLength : int) -> Dictionary[String, Variant]:
+  if _name in ["Item", "Item Delimitation Item", "Sequence Delimitation Item"]: return { "name": _name }
+
   var valueRepresentation : String = transferSyntaxUID.transferSyntax.ReadValueRepresentation()
   var valueLength : int = transferSyntaxUID.transferSyntax.ReadValueLength()
   var value : Variant = transferSyntaxUID.transferSyntax.ReadValue(valueRepresentation, valueLength)
 
-  return {
-    "name": name,
-    "value": value
-  }
+  return { "tag": _tag, "name": _name, "valueLength": valueLength, "valueRepresentation": valueRepresentation, "value": value }

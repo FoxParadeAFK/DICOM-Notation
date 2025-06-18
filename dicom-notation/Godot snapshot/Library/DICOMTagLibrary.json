@@ -210,6 +210,11 @@
     "vr": "SQ"
   },
 
+  "0018 0010": {
+    "name": "Contrast/Bolus Agent",
+    "vr": "LO"
+  },
+
   "0018 0015": {
     "name": "Body Part Examined",
     "vr": "CS"
@@ -242,6 +247,11 @@
 
   "0018 0050": {
     "name": "Slice Thickness",
+    "vr": "DS"
+  },
+
+  "0018 0060": {
+    "name": "KVP",
     "vr": "DS"
   },
 
@@ -285,6 +295,11 @@
     "vr": "DS"
   },
 
+  "0018 0090": {
+    "name": "Data Collection Diameter",
+    "vr": "DS"
+  },
+
   "0018 0091": {
     "name": "Echo Train Length",
     "vr": "IS"
@@ -315,6 +330,11 @@
     "vr": "LO"
   },
 
+  "0018 1040": {
+    "name": "Contrast/Bolus Route",
+    "vr": "LO"
+  },
+
   "0018 1050": {
     "name": "Spatial Resolution",
     "vr": "DS"
@@ -338,6 +358,26 @@
   "0018 1100": {
     "name": "Reconstruction Diameter",
     "vr": "DS"
+  },
+
+  "0018 1120": {
+    "name": "Gantry/Detector Tilt",
+    "vr": "DS"
+  },
+
+  "0018 1150": {
+    "name": "Exposure Time",
+    "vr": "IS"
+  },
+
+  "0018 1151": {
+    "name": "X-Ray Tube Current",
+    "vr": "IS"
+  },
+
+  "0018 1210": {
+    "name": "Convolution Kernel",
+    "vr": "SH"
   },
 
   "0018 1250": {
@@ -403,6 +443,11 @@
   "0020 0013": {
     "name": "Instance Number",
     "vr": "IS"
+  },
+
+  "0020 0020": {
+    "name": "Patient Orientation",
+    "vr": "CS"
   },
 
   "0020 0032": {
@@ -528,6 +573,56 @@
   "0028 1051": {
     "name": "Window Width",
     "vr": "DS"
+  },
+
+  "0028 1052": {
+    "name": "Rescale Intercept",
+    "vr": "DS"
+  },
+
+  "0028 1053": {
+    "name": "Rescale Slope",
+    "vr": "DS"
+  },
+
+  "0028 1054": {
+    "name": "Rescale Type",
+    "vr": "LO"
+  },
+
+  "0032 000A": {
+    "name": "Study Status ID",
+    "vr": "CS"
+  },
+
+  "0032 000C": {
+    "name": "Study Priority ID",
+    "vr": "CS"
+  },
+
+  "0032 1030": {
+    "name": "Reason for Study",
+    "vr": "LO"
+  },
+
+  "0032 4000": {
+    "name": "Study Comments",
+    "vr": "LT"
+  },
+
+  "0040 0244": {
+    "name": "Performed Procedure Step Start Date",
+    "vr": "DA"
+  },
+
+  "0040 0245": {
+    "name": "Performed Procedure Step Start Time",
+    "vr": "TM"
+  },
+
+  "0040 0254": {
+    "name": "Performed Procedure Step Description",
+    "vr": "LO"
   },
 
   "7FE0 0010": {

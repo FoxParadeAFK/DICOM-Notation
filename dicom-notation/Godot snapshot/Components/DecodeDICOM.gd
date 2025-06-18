@@ -27,8 +27,8 @@ func ReadDICOM(file : String) -> void:
 
 	while reader.get_position() < reader.get_length(): print(decoder.ReadElement()) # file data
 
-	# SaveRaw(file, valueInformation)
-	# SaveJSON(file, valueInformation)
+	SaveRaw(file, valueInformation)
+	SaveJSON(file, valueInformation)
 
 func SaveRaw(file : String, valueInformation : Dictionary[String, Variant]) -> void:
 	#TODO - assumes OW however it can be OB in which this method is not necessary
@@ -45,7 +45,4 @@ func SaveJSON(file : String, valueInformation : Dictionary[String, Variant]) -> 
 
 func _ready() -> void:
 	var content : PackedStringArray = ReadDirectory(relativeDirectory, ".dcm")
-	# for file in content: ReadDICOM(file)
-
-	ReadDICOM(content[0])
-
+	for file in content: ReadDICOM(file)

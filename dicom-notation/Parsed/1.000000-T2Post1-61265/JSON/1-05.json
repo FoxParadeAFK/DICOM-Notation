@@ -239,43 +239,23 @@
 	"Slice Location": [
 		"50.39999"
 	],
-	"Samples per Pixel": [
-		1
-	],
+	"Samples per Pixel": 1,
 	"Photometric Interpretation": [
 		"MONOCHROME2 "
 	],
-	"Rows": [
-		512
-	],
-	"Columns": [
-		512
-	],
+	"Rows": 512,
+	"Columns": 512,
 	"Pixel Spacing": [
 		"0.5",
 		"0.5 "
 	],
-	"Bits Allocated": [
-		16
-	],
-	"Bits Stored": [
-		16
-	],
-	"High Bit": [
-		15
-	],
-	"Pixel Representation": [
-		0
-	],
-	"Smallest Image Pixel Value": [
-		0
-	],
-	"Largest Image Pixel Value": [
-		5574
-	],
-	"Pixel Padding Value": [
-		0
-	],
+	"Bits Allocated": 16,
+	"Bits Stored": 16,
+	"High Bit": 15,
+	"Pixel Representation": 0,
+	"Smallest Image Pixel Value": 0,
+	"Largest Image Pixel Value": 5574,
+	"Pixel Padding Value": 0,
 	"Longitudinal Temporal Information Modified": [
 		"MODIFIED"
 	],

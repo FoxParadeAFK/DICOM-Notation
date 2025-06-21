@@ -1,29 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://hqf103jtba7s"]
+[gd_scene load_steps=2 format=3 uid="uid://hqf103jtba7s"]
 
-[ext_resource type="Script" uid="uid://de0u4l3c0mr8f" path="res://Godot snapshot/Components/DecodeDICOM.gd" id="1_38hn5"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_38hn5"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_t3hr1"]
-sky_material = SubResource("ProceduralSkyMaterial_38hn5")
-
-[sub_resource type="Environment" id="Environment_7amwi"]
-background_mode = 2
-sky = SubResource("Sky_t3hr1")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="Script" uid="uid://bb3ilwpal37ch" path="res://Godot snapshot/DICOM/Components/RenderDICOM.gd" id="1_38hn5"]
 
 [node name="Main Scene" type="Node3D"]
 
 [node name="DICOM" type="Node3D" parent="."]
-script = ExtResource("1_38hn5")
 
 [node name="Render" type="Node3D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_7amwi")
+script = ExtResource("1_38hn5")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)

@@ -2,15 +2,15 @@ extends ValueRepresentation
 class_name DecodeSequenceOfItems
 
 var transferSyntaxUID : TransferSyntaxUID
-var sequence : Array[Dictionary] 
-var item : Dictionary[String, Variant]
-var element : Dictionary[String, Variant]
 
 func _init(_transferSyntaxUID : TransferSyntaxUID) -> void: 
   transferSyntaxUID = _transferSyntaxUID
 
 #FIXME - we only have unknown length. need to factor in the option of defined length
 func Translate(_reader : FileAccess, _valueLength : int) -> Variant:
+  var sequence : Array[Dictionary] 
+  var item : Dictionary[String, Variant]
+  var element : Dictionary[String, Variant]
   while element.get("name", "") != "Sequence Delimitation Item":
     var header : Dictionary[String, Variant] = DeduceTag()
     element = ReadElement(header["tag"], header["name"], header["valueLength"])

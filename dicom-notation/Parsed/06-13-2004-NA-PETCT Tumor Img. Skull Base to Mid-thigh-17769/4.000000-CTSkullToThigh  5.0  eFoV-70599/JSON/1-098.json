@@ -1,0 +1,289 @@
+{
+	"File Meta Information Group Length": 196,
+	"File Meta Information Version": [
+		"0",
+		"1"
+	],
+	"Media Storage SOP Class UID": "1.2.840.10008.5.1.4.1.1.2",
+	"Media Storage SOP Instance UID": "1.3.6.1.4.1.14519.5.2.1.8421.4019.306454812448370278893568082533",
+	"Transfer Syntax UID": "1.2.840.10008.1.2.1",
+	"Implementation Class UID": "1.2.40.0.13.1.1.1",
+	"Implementation Version Name": "dcm4che-1.4.34",
+	"Specific Character Set": [
+		"ISO_IR 100"
+	],
+	"Image Type": [
+		"DERIVED",
+		"PRIMARY",
+		"AXIAL",
+		"CT_SOM5 SPI "
+	],
+	"SOP Class UID": "1.2.840.10008.5.1.4.1.1.2",
+	"SOP Instance UID": "1.3.6.1.4.1.14519.5.2.1.8421.4019.306454812448370278893568082533",
+	"Study Date": "13 June, 2004",
+	"Series Date": "13 June, 2004",
+	"Acquisition Date": "13 June, 2004",
+	"Content Date": "13 June, 2004",
+	"Study Time": "12 Hours 56 Minutes 58.",
+	"Series Time": "13 Hours 02 Minutes 59.",
+	"Acquisition Time": "13 Hours 02 Minutes 06.",
+	"Content Time": "13 Hours 02 Minutes 06.",
+	"Accession Number": "1573833216616748",
+	"Modality": [
+		"CT"
+	],
+	"Manufacturer": [
+		"SIEMENS "
+	],
+	"Referring Physician's Name": "  ",
+	"Study Description": [
+		"PET/CT Tumor Img. Skull Base to Mid-thigh "
+	],
+	"Series Description": [
+		"CT_Skull_To_Thigh  5.0  eFoV"
+	],
+	"Manufacturer's Model Name": [
+		"Biograph 40 "
+	],
+	"0008 2111": "",
+	"0009 0010": [
+		"SIEMENS CT VA1 DUMMY"
+	],
+	"Patient's Name": "TCGA-DE-A4MA",
+	"Patient ID": [
+		"TCGA-DE-A4MA"
+	],
+	"Patient's Birth Date": "",
+	"Patient's Sex": [
+		"F "
+	],
+	"Patient's Age": "052Y",
+	"Patient's Weight": [
+		"52.664"
+	],
+	"Additional Patient History": [
+		"THYROID CA"
+	],
+	"Patient Identity Removed": [
+		"YES "
+	],
+	"0012 0063": [
+		"Per DICOM PS 3.15 AnnexE. Details in 0012,0064"
+	],
+	"0012 0064": [
+		{
+			"Code Value": "113100",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Basic Application Confidentiality Profile "
+			]
+		},
+		{
+			"Code Value": "113101",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Clean Pixel Data Option "
+			]
+		},
+		{
+			"Code Value": "113105",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Clean Descriptors Option"
+			]
+		},
+		{
+			"Code Value": "113107",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Longitudinal With Modified Dates Option"
+			]
+		},
+		{
+			"Code Value": "113108",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Patient Characteristics Option "
+			]
+		},
+		{
+			"Code Value": "113109",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Device Identity Option "
+			]
+		},
+		{
+			"Code Value": "113111",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Safe Private Option"
+			]
+		}
+	],
+	"0013 0010": [
+		"CTP "
+	],
+	"0013 1010": "",
+	"0013 1013": "",
+	"Body Part Examined": [
+		"THYROID "
+	],
+	"Slice Thickness": [
+		"5 "
+	],
+	"KVP": [
+		"120 "
+	],
+	"Data Collection Diameter": [
+		"500 "
+	],
+	"0018 1000": [
+		"58514 "
+	],
+	"Software Version(s)": [
+		"syngo CT 2006A"
+	],
+	"Protocol Name": [
+		"PETCT_Skull_To_Thigh"
+	],
+	"Reconstruction Diameter": [
+		"700 "
+	],
+	"0018 1110": [
+		"1040"
+	],
+	"0018 1111": [
+		"570 "
+	],
+	"Gantry/Detector Tilt": [
+		"0 "
+	],
+	"0018 1130": [
+		"216 "
+	],
+	"0018 1140": [
+		"CW"
+	],
+	"Exposure Time": "500 ",
+	"0018 1151": "50",
+	"0018 1152": "25",
+	"0018 1160": "0 ",
+	"0018 1170": "10",
+	"0018 1190": [
+		"1.2 "
+	],
+	"0018 1200": "13 June, 2004",
+	"0018 1201": "07 Hours 09 Minutes 02.",
+	"Convolution Kernel": "B30f",
+	"Patient Position": [
+		"HFS "
+	],
+	"0019 0010": [
+		"SIEMENS CT VA0  COAD"
+	],
+	"0019 10B0": [
+		"28.8"
+	],
+	"Study Instance UID": "1.3.6.1.4.1.14519.5.2.1.8421.4019.325979970509091323558351270599",
+	"Study ID": "",
+	"Series Number": "4 ",
+	"Acquisition Number": "2 ",
+	"Instance Number": "98",
+	"Image Position (Patient)": [
+		"-349.31640625",
+		"-565.31640625",
+		"-1040.5 "
+	],
+	"Image Orientation (Patient)": [
+		"1",
+		"0",
+		"0",
+		"0",
+		"1",
+		"0 "
+	],
+	"Frame of Reference UID": "1.3.6.1.4.1.14519.5.2.1.8421.4019.320176870597712818993684273403",
+	"Position Reference Indicator": "",
+	"Slice Location": [
+		"-1040.5 "
+	],
+	"0020 4000": "",
+	"0021 0010": [
+		"SIEMENS MED "
+	],
+	"0021 1011": [
+		"0",
+		"0 "
+	],
+	"Samples per Pixel": 1,
+	"Photometric Interpretation": [
+		"MONOCHROME2 "
+	],
+	"Rows": 512,
+	"Columns": 512,
+	"Pixel Spacing": [
+		"1.3671875",
+		"1.3671875 "
+	],
+	"Bits Allocated": 16,
+	"Bits Stored": 12,
+	"High Bit": 11,
+	"Pixel Representation": 0,
+	"Smallest Image Pixel Value": 0,
+	"Largest Image Pixel Value": 1969,
+	"Longitudinal Temporal Information Modified": "MODIFIED",
+	"Window Center": [
+		"40",
+		"300"
+	],
+	"Window Width": [
+		"300",
+		"1500"
+	],
+	"Rescale Intercept": [
+		"-1024 "
+	],
+	"Rescale Slope": [
+		"1 "
+	],
+	"0028 1055": [
+		"WINDOW1",
+		"WINDOW2 "
+	],
+	"0028 2110": [
+		"01"
+	],
+	"0029 0010": [
+		"SIEMENS CSA HEADER"
+	],
+	"0029 0011": [
+		"SIEMENS MEDCOM HEADER "
+	],
+	"0029 0012": [
+		"SIEMENS MEDCOM OOG"
+	],
+	"0029 1131": [
+		"4.0.295768152 "
+	],
+	"0029 1132": 524288,
+	"0029 1133": 0,
+	"0029 1134": [
+		"DB TO DICOM "
+	],
+	"0031 0010": [
+		"AGFA PACS Archive Mirroring 1.0 "
+	],
+	"Study Status ID": [
+		"READ"
+	],
+	"Study Priority ID": [
+		"LOW "
+	],
+	"Reason for Study": [
+		"THYROID CA"
+	],
+	"0033 0010": [
+		"MITRA OBJECT UTF8 ATTRIBUTES 1.0"
+	]
+}

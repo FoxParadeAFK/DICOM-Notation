@@ -1,0 +1,339 @@
+{
+	"File Meta Information Group Length": 198,
+	"File Meta Information Version": [
+		"0",
+		"1"
+	],
+	"Media Storage SOP Class UID": "1.2.840.10008.5.1.4.1.1.128",
+	"Media Storage SOP Instance UID": "1.3.6.1.4.1.14519.5.2.1.8421.4019.233838662406072300722900997563",
+	"Transfer Syntax UID": "1.2.840.10008.1.2.1",
+	"Implementation Class UID": "1.2.40.0.13.1.1.1",
+	"Implementation Version Name": "dcm4che-1.4.34",
+	"Specific Character Set": [
+		"ISO_IR 100"
+	],
+	"Image Type": [
+		"ORIGINAL",
+		"PRIMARY"
+	],
+	"SOP Class UID": "1.2.840.10008.5.1.4.1.1.128",
+	"SOP Instance UID": "1.3.6.1.4.1.14519.5.2.1.8421.4019.233838662406072300722900997563",
+	"Study Date": "13 June, 2004",
+	"Series Date": "13 June, 2004",
+	"Acquisition Date": "13 June, 2004",
+	"Content Date": "13 June, 2004",
+	"Study Time": "12 Hours 56 Minutes 58.",
+	"Series Time": "13 Hours 18 Minutes 37.",
+	"Acquisition Time": "13 Hours 18 Minutes 37.",
+	"Content Time": "13 Hours 30 Minutes 09.",
+	"Accession Number": "1573833216616748",
+	"Modality": [
+		"PT"
+	],
+	"Manufacturer": [
+		"SIEMENS "
+	],
+	"Referring Physician's Name": "  ",
+	"Study Description": [
+		"PET/CT Tumor Img. Skull Base to Mid-thigh "
+	],
+	"Series Description": [
+		"PET HeadNeck"
+	],
+	"Manufacturer's Model Name": [
+		"1094"
+	],
+	"Patient's Name": "TCGA-DE-A4MA",
+	"Patient ID": [
+		"TCGA-DE-A4MA"
+	],
+	"Patient's Birth Date": "",
+	"Patient's Sex": [
+		"F "
+	],
+	"Patient's Age": "052Y",
+	"Patient's Weight": [
+		"52.664"
+	],
+	"Additional Patient History": [
+		"THYROID CA"
+	],
+	"Patient Identity Removed": [
+		"YES "
+	],
+	"0012 0063": [
+		"Per DICOM PS 3.15 AnnexE. Details in 0012,0064"
+	],
+	"0012 0064": [
+		{
+			"Code Value": "113100",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Basic Application Confidentiality Profile "
+			]
+		},
+		{
+			"Code Value": "113101",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Clean Pixel Data Option "
+			]
+		},
+		{
+			"Code Value": "113105",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Clean Descriptors Option"
+			]
+		},
+		{
+			"Code Value": "113107",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Longitudinal With Modified Dates Option"
+			]
+		},
+		{
+			"Code Value": "113108",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Patient Characteristics Option "
+			]
+		},
+		{
+			"Code Value": "113109",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Device Identity Option "
+			]
+		},
+		{
+			"Code Value": "113111",
+			"Coding Scheme Designator": "DCM ",
+			"Code Meaning": [
+				"Retain Safe Private Option"
+			]
+		}
+	],
+	"0013 0010": [
+		"CTP "
+	],
+	"0013 1010": "",
+	"0013 1013": "",
+	"Body Part Examined": [
+		"THYROID "
+	],
+	"Slice Thickness": [
+		"3 "
+	],
+	"0018 1000": [
+		"10000 "
+	],
+	"Software Version(s)": [
+		"PET/CT 2009A"
+	],
+	"Protocol Name": [
+		"PETCT_HeadNeck"
+	],
+	"0018 1181": [
+		"NONE"
+	],
+	"0018 1200": "",
+	"0018 1201": "07 Hours 37 Minutes 25. - 15 Hours 34 Minutes 15.",
+	"Convolution Kernel": "XYZ Gauss2.00 ",
+	"0018 1242": "600000",
+	"Patient Position": [
+		"HFS "
+	],
+	"Study Instance UID": "1.3.6.1.4.1.14519.5.2.1.8421.4019.854389690390951275833671629886",
+	"Study ID": "",
+	"Series Number": "102 ",
+	"Acquisition Number": "2001",
+	"Instance Number": "51",
+	"Image Position (Patient)": [
+		"-342.13926710063",
+		"-509.63080994659",
+		"-743"
+	],
+	"Image Orientation (Patient)": [
+		"1",
+		"0",
+		"0",
+		"0",
+		"1",
+		"0 "
+	],
+	"Frame of Reference UID": "1.3.6.1.4.1.14519.5.2.1.8421.4019.980779396248427760030882147933",
+	"Position Reference Indicator": "",
+	"Slice Location": [
+		"-743"
+	],
+	"0020 4000": [
+		"AC_CT "
+	],
+	"Samples per Pixel": 1,
+	"Photometric Interpretation": [
+		"MONOCHROME2 "
+	],
+	"Rows": 336,
+	"Columns": 336,
+	"Pixel Spacing": [
+		"2.03642",
+		"2.03642 "
+	],
+	"0028 0051": [
+		"NORM",
+		"DTIM",
+		"ATTN",
+		"SCAT",
+		"RADL",
+		"DECY "
+	],
+	"Bits Allocated": 16,
+	"Bits Stored": 16,
+	"High Bit": 15,
+	"Pixel Representation": 1,
+	"Smallest Image Pixel Value": 0,
+	"Largest Image Pixel Value": 5423,
+	"Longitudinal Temporal Information Modified": "MODIFIED",
+	"Window Center": [
+		"15293 "
+	],
+	"Window Width": [
+		"27527 "
+	],
+	"Rescale Intercept": [
+		"0 "
+	],
+	"Rescale Slope": [
+		"4.47091 "
+	],
+	"Rescale Type": [
+		"BQML"
+	],
+	"0029 0010": [
+		"SIEMENS MEDCOM HEADER "
+	],
+	"0029 1031": [
+		"4.0.295862683 "
+	],
+	"0029 1032": 225792,
+	"0029 1033": 0,
+	"0029 1034": [
+		"DB TO DICOM "
+	],
+	"0031 0010": [
+		"AGFA PACS Archive Mirroring 1.0 "
+	],
+	"Study Status ID": [
+		"READ"
+	],
+	"Study Priority ID": [
+		"LOW "
+	],
+	"Reason for Study": [
+		"THYROID CA"
+	],
+	"0033 0010": [
+		"MITRA OBJECT UTF8 ATTRIBUTES 1.0"
+	],
+	"0054 0013": [
+		{
+			"--------------------------------------------------": [
+				"650 "
+			]
+		}
+	],
+	"0054 0016": [
+		{
+			"--------------------------------------------------": [
+				{
+					"Code Value": "C-111A1 ",
+					"Coding Scheme Designator": "SNM3",
+					"Code Meaning": [
+						"F^18^[^18^Fluorine] "
+					],
+					"--------------------------------------------------": [
+						"4020"
+					]
+				}
+			]
+		}
+	],
+	"0054 0081": 111,
+	"0054 0410": [
+		{
+			"Code Value": "F-10450 ",
+			"Coding Scheme Designator": "99SDM ",
+			"Code Meaning": [
+				"recumbent "
+			],
+			"--------------------------------------------------": [
+				{
+					"Code Value": "F-10340 ",
+					"Coding Scheme Designator": "99SDM ",
+					"Code Meaning": [
+						"supine"
+					],
+					"--------------------------------------------------": [
+						"20"
+					]
+				}
+			]
+		}
+	],
+	"0054 0414": [
+		{
+			"Code Value": "F-10470 ",
+			"Coding Scheme Designator": "99SDM ",
+			"Code Meaning": [
+				"headfirst "
+			],
+			"--------------------------------------------------": [
+				"21"
+			]
+		}
+	],
+	"0054 1000": [
+		"WHOLE BODY",
+		"IMAGE"
+	],
+	"0054 1001": [
+		"BQML"
+	],
+	"0054 1002": [
+		"EMISSION"
+	],
+	"0054 1100": [
+		"DLYD"
+	],
+	"0054 1101": [
+		"measured,AC_CT"
+	],
+	"0054 1102": [
+		"START "
+	],
+	"0054 1103": [
+		"OSEM2D 2i8s "
+	],
+	"0054 1105": [
+		"Model-based "
+	],
+	"0054 1200": [
+		"38"
+	],
+	"0054 1201": "5\\6 ",
+	"0054 1300": [
+		"298421.41716721 "
+	],
+	"0054 1321": [
+		"1.0319"
+	],
+	"0054 1322": [
+		"33674200"
+	],
+	"0054 1323": [
+		"0.202907"
+	],
+	"0054 1330": 51
+}

@@ -1,6 +1,6 @@
 extends Node3D
 
-const folder : String = "06-13-2004-NA-PETCT Tumor Img. Skull Base to Mid-thigh-17769/4.000000-CT HeadNeck  3.0  eFoV-85383" # not need for / at the beginning or end
+const folder : String = "06-13-2004-NA-PETCT Tumor Img. Skull Base to Mid-thigh-17769/102.000000-PET HeadNeck-29886" # not need for / at the beginning or end
 const relativeDirectory : String = "res://%s" % folder
 const rawPath : String = "res://Parsed/%s/Raw" % folder
 const jsonPath : String = "res://Parsed/%s/JSON" % folder
@@ -21,9 +21,8 @@ func ReadImage(_rawContent : Array, _jsonContent : Array, _layer : int) -> void:
   RenderImage(json, data, _layer)
 
 func TranslateImage(_raw : FileAccess, _json : Dictionary, _rawLength : int) -> PackedByteArray:
-  var dimension : int = _json["Rows"] * _json["Columns"]
   var bytes : PackedByteArray
-  if _raw.get_length() == dimension:
+  if _json["Bits Stored"] == 8:
     while _raw.get_position() < _raw.get_length():
       var byte : int = _raw.get_8()
       bytes.append(byte)
@@ -51,6 +50,8 @@ func _ready() -> void:
   var rawContent : Array = ReadDirectory(rawPath, ".raw")
   var jsonContent : Array = ReadDirectory(jsonPath, ".json")
   pool = ThreadPool.new(OS.get_processor_count() * 2)
+
+  print("Parsing content raw count: %s" % rawContent.size())
 
   if rawContent.size() != jsonContent.size(): return
 

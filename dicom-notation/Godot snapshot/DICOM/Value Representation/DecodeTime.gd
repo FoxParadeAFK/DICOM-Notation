@@ -6,7 +6,10 @@ func Translate(_reader : FileAccess, _valueLength : int) -> Variant:
   if _valueLength > 28: return "?" # range maximum length 28 bytes
   if _valueLength <= 16: return FormatTime(_reader.get_buffer(_valueLength).get_string_from_ascii())
 
-  return "?"
+  var stream : PackedStringArray = _reader.get_buffer(_valueLength).get_string_from_ascii().split("\\")
+  var beginning : String = FormatTime(stream[0])
+  var end : String = FormatTime(stream[1])
+  return "%s - %s" % [beginning, end]
 
 func FormatTime(time : String) -> String:
   var HH : String = FormatIntegral(time.substr(0, 2), "Hours")

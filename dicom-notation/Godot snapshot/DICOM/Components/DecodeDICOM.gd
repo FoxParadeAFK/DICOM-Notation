@@ -1,6 +1,6 @@
 extends Node3D
 
-const folder : String = "06-13-2004-NA-PETCT Tumor Img. Skull Base to Mid-thigh-17769/4.000000-CT HeadNeck  3.0  eFoV-85383" # not need for / at the beginning or end
+const folder : String = "06-13-2004-NA-PETCT Tumor Img. Skull Base to Mid-thigh-17769/102.000000-PET HeadNeck-29886" # not need for / at the beginning or end
 const relativeDirectory : String = "res://%s" % folder
 const rawPath : String = "res://Parsed/%s/Raw" % folder
 const jsonPath : String = "res://Parsed/%s/JSON" % folder
@@ -28,8 +28,8 @@ func ReadDICOM(file : String) -> void:
   decoder.DeduceTransferSyntax(valueInformation.get("Transfer Syntax UID"))
 
   while reader.get_position() < reader.get_length(): 
-    # print(decoder.ReadElement()) # file data
-    decoder.ReadElement() # file data
+    print(decoder.ReadElement()) # file data
+    # decoder.ReadElement() # file data
 
   SaveRaw(file, valueInformation)
   SaveJSON(file, valueInformation)
@@ -40,8 +40,8 @@ func SaveRaw(file : String, valueInformation : Dictionary[String, Variant]) -> v
   #TODO - assumes OW however it can be OB in which this method is not necessary
   #NOTE - we can tell based on the image height and width. If OW, the value will be double in length of height * width
   var raw : FileAccess = FileAccess.open("%s/%s" % [rawPath, file.replace(".dcm", ".raw")], FileAccess.WRITE)
-  var dimension : int = valueInformation["Rows"] * valueInformation["Columns"]
-  if dimension == valueInformation["Pixel Data"].size():
+  
+  if valueInformation["Bits Stored"] == 8:
     for word in valueInformation["Pixel Data"]: raw.store_8(word)
   else:
     for word in valueInformation["Pixel Data"]: raw.store_16(word)

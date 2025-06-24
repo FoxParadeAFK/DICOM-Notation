@@ -22,23 +22,18 @@ func ReadDICOM(file : String) -> void:
 
   var metaInformationLength : int = valueInformation.get("File Meta Information Group Length") + reader.get_position()
   while reader.get_position() < metaInformationLength: 
-    # print(decoder.ReadElement()) # meta information
-    decoder.ReadElement()
+    print(decoder.ReadElement()) # meta information # dead remains of print()
 
   decoder.DeduceTransferSyntax(valueInformation.get("Transfer Syntax UID"))
 
   while reader.get_position() < reader.get_length(): 
-    print(decoder.ReadElement()) # file data
-    # decoder.ReadElement() # file data
+    (decoder.ReadElement()) # file data # dead remains of print()
 
   SaveRaw(file, valueInformation)
   SaveJSON(file, valueInformation)
-
   print("File %s complete" % file)
 
 func SaveRaw(file : String, valueInformation : Dictionary[String, Variant]) -> void:
-  #TODO - assumes OW however it can be OB in which this method is not necessary
-  #NOTE - we can tell based on the image height and width. If OW, the value will be double in length of height * width
   var raw : FileAccess = FileAccess.open("%s/%s" % [rawPath, file.replace(".dcm", ".raw")], FileAccess.WRITE)
   
   if valueInformation["Bits Stored"] == 8:
@@ -58,16 +53,8 @@ func _ready() -> void:
   var pool : ThreadPool = ThreadPool.new(OS.get_processor_count() * 2)
   var content : PackedStringArray = ReadDirectory(relativeDirectory, ".dcm")
 
-  # var file : String = content[0]
-
-  # var before : int = Time.get_ticks_msec()
-  # pool.QueueTask(ReadDICOM.bind(file))
-  # var after : int = Time.get_ticks_msec()
-  # print(after - before)
-
   var before : int = Time.get_ticks_msec()
-  for file in content: 
-    pool.QueueTask(ReadDICOM.bind(file))
+  for file in content: pool.QueueTask(ReadDICOM.bind(file))
   
   var after : int = Time.get_ticks_msec()
   print(after - before)

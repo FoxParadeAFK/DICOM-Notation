@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://hqf103jtba7s"]
 
-[ext_resource type="Script" uid="uid://bb3ilwpal37ch" path="res://Godot snapshot/DICOM/Components/RenderDICOM.gd" id="1_38hn5"]
+[ext_resource type="Script" uid="uid://de0u4l3c0mr8f" path="res://Godot snapshot/DICOM/Components/DecodeDICOM.gd" id="1_38hn5"]
 
 [node name="Main Scene" type="Node3D"]
 
 [node name="DICOM" type="Node3D" parent="."]
+script = ExtResource("1_38hn5")
 
 [node name="Render" type="Node3D" parent="."]
-script = ExtResource("1_38hn5")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
